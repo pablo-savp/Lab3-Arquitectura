@@ -1,0 +1,25 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//Dependencias del proyecto spring jpa y mariadb
+	implementation 'org.springframework.data:spring-data-jpa:2.7.5'
+	implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.8'
+
+	//Dependencias internas
+	implementation project(':domain')
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

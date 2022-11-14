@@ -1,0 +1,26 @@
+type Estudio {
+    cc_persona: Int!
+    id_prof: Int!
+    universidad: String!
+    fecha: String!
+}
+
+type Persona {
+    cc: Int!
+    nombre: String!
+    apellido: String!
+    genero: String!
+    edad: Int!
+}
+
+type Profesion {
+    id: Int!
+    nombre: String!
+    descripcion: String!
+}
+
+type Telefono {
+    numero: String!
+    operador: String!
+    dueno: Int!
+}

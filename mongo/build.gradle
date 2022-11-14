@@ -1,0 +1,37 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.5'
+	id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+	id 'java'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compileOnly 'org.projectlombok:lombok:1.18.24'
+	annotationProcessor 'org.projectlombok:lombok:1.18.24'
+	implementation group: 'org.modelmapper', name: 'modelmapper', version: '3.1.0'
+
+	testCompileOnly 'org.projectlombok:lombok:1.18.24'
+	testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+	implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.projectlombok:lombok:1.18.22'
+	implementation 'org.projectlombok:lombok:1.18.22'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	//Dependencias de proyecto
+//	implementation 'org.mongodb:mongo-java-driver:3.12.11'
+	implementation group: 'com.querydsl', name: 'querydsl-jpa', version: '5.0.0'
+	implementation 'org.springframework.data:spring-data-mongodb:3.4.5'
+	implementation group: 'org.mongodb', name: 'mongodb-driver-sync', version: '4.7.2'
+	implementation group: 'org.mongodb', name: 'mongodb-driver-core', version: '4.7.2'
+	implementation group: 'org.mongodb', name: 'bson', version: '4.7.2'
+
+	//Dependencias internas
+	implementation project(':domain')
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
